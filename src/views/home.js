@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { Helmet } from 'react-helmet'
+import Aos from 'aos'
+import "aos/dist/aos.css"
 
 import Navbar from '../components/navbar'
 import FeatureCard from '../components/feature-card'
@@ -10,6 +12,11 @@ import Copyright from '../components/copyright'
 import './home.css'
 
 const Home = (props) => {
+
+  useEffect(() => {
+    Aos.init({ duration: 2000 })
+  }, [])
+
   return (
     <div className="home-container">
       <Helmet>
@@ -34,7 +41,7 @@ const Home = (props) => {
                 <span>Join <span className="home-text09">Amaterasu Hub</span></span>
               </h1>
               <div className="home-features-container">
-                <div className="home-feature">
+                <div data-aos="fade-right" className="home-feature">
                   <svg
                     viewBox="0 0 877.7142857142857 1024"
                     className="home-icon"
@@ -50,7 +57,7 @@ const Home = (props) => {
                     />
                   </span>
                 </div>
-                <div className="home-feature1">
+                <div data-aos="fade-right" className="home-feature1">
                   <svg
                     viewBox="0 0 877.7142857142857 1024"
                     className="home-icon2"
@@ -61,7 +68,7 @@ const Home = (props) => {
                     Our own free &amp; paid hub, high quality hub.
                   </span>
                 </div>
-                <div className="home-feature2">
+                <div data-aos="fade-right" className="home-feature2">
                   <svg
                     viewBox="0 0 877.7142857142857 1024"
                     className="home-icon4"
@@ -79,7 +86,7 @@ const Home = (props) => {
                 </div>
               </div>
             </div>
-            <div className="home-image-container">
+            <div data-aos="fade-left" className="home-image-container">
               <iframe
                 src="https://discord.com/widget?id=946215480434249768&amp;theme=dark"
                 className="home-iframe"
@@ -129,7 +136,7 @@ const Home = (props) => {
             </div>
           </div>
         </div>
-        <div className="home-section-four section-container">
+        <div data-aos="fade-up" className="home-section-four section-container">
           <div className="home-max-width2 max-content-container">
             <h2 className="home-text11 heading2">
               <span>People love Amaterasu.</span>
@@ -144,7 +151,7 @@ const Home = (props) => {
         </div>
       </main>
       <Footer></Footer>
-      <Copyright></Copyright>
+      <Copyright data-aos="fade-right" ></Copyright>
     </div>
   )
 }

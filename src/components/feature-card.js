@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import PropTypes from 'prop-types'
+import Aos from 'aos'
+import "aos/dist/aos.css"
 
 import './feature-card.css'
+//import { useEffect } from 'react/cjs/react.production.min'
 
 const FeatureCard = (props) => {
+
+  useEffect(() => {
+    Aos.init({ duration: 2000 })
+  }, [])
+
   return (
-    <div className="feature-card-card">
+    <div data-aos="fade-up" className="feature-card-card">
       <img
         alt={props.image_alt}
         src={props.image_src}
@@ -14,7 +22,7 @@ const FeatureCard = (props) => {
       />
       <h4 className="feature-card-text heading4">{props.heading}</h4>
       <span className="feature-card-text1 content-Light">{props.text}</span>
-      <span className="feature-card-text2">{props.text1}</span>
+      <span className="feature-card-text2"><a href="https://discord.gg/amaterasuhub" target="_blank" rel="noreferrer noopener">{props.text1}</a></span>
     </div>
   )
 }

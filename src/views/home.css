@@ -34,7 +34,7 @@
 }
 .home-text {
   color: #423b46;
-  width: 536px;
+  max-width: 536px;
   font-size: 52px;
   font-style: normal;
   font-family: Lexend;
